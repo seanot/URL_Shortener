@@ -1,8 +1,21 @@
-<div class="container">
-  <h1>Welcome to Sinatra!</h1>
+
+  <h1>Welcome to URL Shortener!</h1>
   <form action= "/urls" method= "POST">
     <input type="text" name= "long_url">
     <input type="submit" value="submit">
 
   </form>
+</div>
+
+<div class="short_url">
+  <p>
+    <h4><a href="/"> URL Shortner</a></h4>
+    Shortened URL:<a href="<%= @url_1 %>"> <%= @url_1 %> </a>
+    <ul>
+      
+    <% @urls.each do |url| %>
+      <li><%= url.long_url %>: <a href="/<%= url.short_url %>">localhost:9393/<%= url.short_url %></a>  <%= url.click_counter %></li>
+    <% end %>
+    </ul>
+  </P>
 </div>
